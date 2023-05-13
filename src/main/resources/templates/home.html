@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+  <title>Airline Online System</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+h1, h2 {
+  margin-top: 0;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+label, input[type="submit"] {
+  margin: 5px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+</style>
+<body>
+  <header>
+    <h1>Welcome to the Airline Online System</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Flights</a></li>
+        <li><a href="#">Bookings</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <section>
+      <h2>About Us</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla malesuada nisi sed aliquam tincidunt. In ut elementum turpis. In hac habitasse platea dictumst.</p>
+    </section>
+    
+    <section>
+      <h2>Find Flights</h2>
+      <form>
+        <label for="from">From:</label>
+        <input type="text" id="from" name="from">
+        
+        <label for="to">To:</label>
+        <input type="text" id="to" name="to">
+        
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date">
+        
+        <input type="submit" value="Search">
+      </form>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 Airline Online System. All rights reserved.</p>
+  </footer>
+</body>
+</html>
