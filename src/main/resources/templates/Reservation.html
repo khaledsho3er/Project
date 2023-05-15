@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.thymleaf.org">
+    
+<head>
+    <title>Reservation </title>
+</head>
+<body>
+
+ <div>
+    <form th:action="@{/reservation}" th:object="${reservation}" method="post">
+    <label for="src">Flying From:</label>
+    <input type="text" th:field="*{src}" name="from" required>
+  
+    <label for="dst">Flying To:</label>
+    <input type="text" th:field="*{dst}" name="to" required>
+  
+    <label for="date">Date:</label>
+    <input type="date" th:field="*{date}" name="date" required>
+  
+    <label for="adults">Adults:</label>
+    <input type="number" th:field="*{adults}" name="adults" min="1" required>
+  
+    <label for="children">Children:</label>
+    <input type="number" th:field="*{children}" name="children" min="0" required>
+  
+    <label for="class">Travel Class:</label>
+    <select th:field="*{travelclass}" name="class" required>
+      <option th:value="0" th:text="Economy"></option>
+      <option th:value="1" th:text="Business"></option>
+      <option th:value="2"th:text="First"></option>
+    </select>
+  
+    <button type="submit">Submit</button>
+  </form>
+ </div>
+
+</body>
+    
+</html>

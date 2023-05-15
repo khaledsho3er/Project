@@ -18,9 +18,4 @@ public class Logincontroller {
     @Autowired
     private UserRepositories userRepositories;
 
-
-    
-
-    
-    
 }

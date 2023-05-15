@@ -9,12 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-
 import com.example.project.project.Models.User;
 import com.example.project.project.repositories.UserRepositories;
-
-
-
 
 @Controller
 @RequestMapping("")
@@ -27,17 +23,15 @@ public class signupcontroller {
     private UserRepositories userRepositories;
 
     @GetMapping("/signup/adduser")
-    public ModelAndView Adduser(){
-        ModelAndView mav= new ModelAndView("signup.html");
-        User newuser=new User();
+    public ModelAndView Adduser() {
+        ModelAndView mav = new ModelAndView("signup.html");
+        User newuser = new User();
         mav.addObject("user", newuser);
         return mav;
     }
 
-
     @PostMapping("/login")
-    public String saveuser(@ModelAttribute User user)
-    {
+    public String saveuser(@ModelAttribute User user) {
         String passwordHashed = this.bCryptPasswordEncoder.encode(user.getPassword());
         user.setPassword(passwordHashed);
         this.userRepositories.save(user);
@@ -45,14 +39,10 @@ public class signupcontroller {
     }
 
     @GetMapping("/login")
-    public ModelAndView loginview()
-    {
+    public ModelAndView loginview() {
         ModelAndView mav = new ModelAndView("login.html");
         return mav;
 
     }
 
-  
-
-    
 }
