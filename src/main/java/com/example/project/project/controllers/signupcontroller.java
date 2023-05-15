@@ -35,7 +35,7 @@ public class signupcontroller {
     }
 
 
-    @PostMapping("/login")
+    @PostMapping("/login/save")
     public String saveuser(@ModelAttribute User user)
     {
         String passwordHashed = this.bCryptPasswordEncoder.encode(user.getPassword());
@@ -44,13 +44,7 @@ public class signupcontroller {
         return "redirect:/login";
     }
 
-    @GetMapping("/login")
-    public ModelAndView loginview()
-    {
-        ModelAndView mav = new ModelAndView("login.html");
-        return mav;
-
-    }
+   
 
   
 

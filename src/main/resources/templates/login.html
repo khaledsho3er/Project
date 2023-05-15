@@ -1,13 +1,12 @@
-<!DOCTYPE html>
 <html xmlns:th="http://www.thymleaf.org">
 <head>
     <title>Document</title>
 </head>
 <body>
 
-    <form th:action="@{/home}" method="POST">
-        <input type="text" placeholder="Enter Username">
-        <input type="password" placeholder="Enter Password">
+    <form th:action="@{/login/home}" th:object="${user}" method="POST">
+        <input type="text" th:field="*{username}" placeholder="Enter Username">
+        <input type="password" th:field="*{password}" placeholder="Enter Password">
         <button type="submit">Login</button>
     </form>
     
