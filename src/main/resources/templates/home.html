@@ -2,106 +2,72 @@
 <html xmlns:th="http://www.thymleaf.org">
 <head>
   <title>Airline Online System</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
 </head>
-<style>
-    body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin-right: 10px;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-main {
-  padding: 20px;
-}
-
-section {
-  margin-bottom: 20px;
-}
-
-h1, h2 {
-  margin-top: 0;
-}
-
-form {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
-
-label, input[type="submit"] {
-  margin: 5px;
-}
-
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-}
-
-</style>
-<body>
+<body> 
   <header>
     <h1>Welcome to the Airline Online System</h1>
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Flights</a></li>
-        <li><a href="#">Bookings</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a th:href="@{/home}">Home</a></li>
+        <li><a th:href="@{/flights}">Flights</a></li>
+        <li><a th:href="@{/Reservations}">Bookings</a></li>
+        <li><a th:href="@{/contactus}">Contact Us</a></li>
+        <li><a th:href="@{/userprofile}">My Account</a></li>
         <li><a th:href="@{/logout}">Logout</a></li>
       </ul>
     </nav>
   </header>
+  <body>
+    <div class="welcome-container" style="background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('/images/seat.png');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;">
+      <div class="welcome-text">
+        <h1>Welcome User</h1>
+        <p>We hope that you enjoy our services.</p>
+      </div>
+    </div>
+  </body>
   
-  <main>
-    <section>
-      <h2>About Us</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla malesuada nisi sed aliquam tincidunt. In ut elementum turpis. In hac habitasse platea dictumst.</p>
-    </section>
+  </html>
+  
+     <section class="special-offers">
+    <h3>Special Offers and Promotions</h3>
+    <div class="offer-list">
+      <div class="offer">
+        <img th:src="@{/images/offer1.jpg}" alt="Offer 1">
+        <div class="offer-info">
+          <h4>Summer Sale</h4>
+          <p>Book your summer getaway now and save up to 30% on selected flights. Limited time offer!</p>
+          <a href="#" class="btn-book">Book Now</a>
+        </div>
+      </div>
+      <div class="offer">
+        <img th:src="@{/images/offer2.jpg}" alt="Offer 1">
+        <div class="offer-info">
+          <h4>Last Minute Deals</h4>
+          <p>Discover incredible last-minute flight deals to popular destinations. Don't miss out!</p>
+          <a href="#" class="btn-book">Book Now</a>
+        </div>
+      </div>
+      <!-- Add more offers here -->
+    </div>
+  </section>
+   <main>
+      <section>
+        <h2>About Us</h2>
+        <p><b>Welcome to our online booking airline system! We are dedicated to making your travel experience seamless and enjoyable.</b></p>
+    <p>At our system, we understand that traveling is more than just getting from one place to another. It's about creating memories, exploring new destinations, and connecting with people and cultures. That's why we strive to provide you with the best possible service and options for your travel needs.</p>
+      </section>
+  
+    </main>
     
-    <section>
-      <h2>Find Flights</h2>
-      <form>
-        <label for="from">From:</label>
-        <input type="text" id="from" name="from">
-        
-        <label for="to">To:</label>
-        <input type="text" id="to" name="to">
-        
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="date">
-        
-        <input type="submit" value="Search">
-      </form>
-    </section>
-  </main>
-  
-  <footer>
-    <p>&copy; 2023 Airline Online System. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+    <footer>
+      <p>&copy; 2023 Airline Online System. All rights reserved.</p>
+    </footer>
+  </body>
+  </html>
