@@ -1,14 +1,168 @@
+
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymleaf.org">
 <head>
     <title>Document</title>
 </head>
-<body>
 
-    <form th:action="@{/login/home}" th:object="${user}" method="POST">
-        <input type="text" th:field="*{username}" placeholder="Enter Username">
-        <input type="password" th:field="*{password}" placeholder="Enter Password">
-        <button type="submit">Login</button>
-    </form>
-    
+<body>
+	<main>
+
+        <form th:action="@{/login/home}" th:object="${user}" method="POST">
+            <h2>Login</h2>
+             <input type="text" th:field="*{username}" placeholder="Enter Username" required>
+             <input type="password" th:field="*{password}" placeholder="Enter Password" required>
+            <label class="container" >Remember Me
+                <input type="checkbox" >
+                <span class="checkmark"></span>
+              </label>
+			<input type="submit" class="button" value="login"></input>
+      <button type="button" value="Sign Up" style="background-color: #3f8ad6;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+      padding: 10px;
+      margin-top: 20px;
+      width: 90%;
+      margin-left: 5%;"><a th:href="@{/signup/adduser}">Sign Up</a></button>
+		</form>
+	</main>
 </body>
 </html>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  background-image: url("photo-1436491865332-7a61a109cc05.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+
+h2 {
+  margin: 0;
+  color:#6d6d6d;
+  margin-top: 80px;
+}
+a
+{
+    color: #fff;
+}
+form {
+  margin: 0 auto;
+  padding: 20px;
+height: 500px;
+width: 400px;
+  margin-top: 150px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+
+label {
+    display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px;
+  width: 90%;
+  margin-top: 15%;
+
+}
+
+.button[type="submit"] ,
+.button[type="button"]{
+  background-color: #3f8ad6;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 40px;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.button[type="submit"]:hover {
+  background-color: #6d6d6d;
+}
+.container {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-top: 12px;
+  margin-bottom: 14px;
+  cursor: pointer;
+  font-size: 13px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color:#6d6d6d;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  margin-top: 0;
+  left: 4px;
+  height: 15px;
+  width: 15px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #6d6d6d;
+}
+
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  margin-top: -5px;
+  margin-left: -6px;
+  height: 7px;
+  width: 1px;
+}
+
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+</style>
