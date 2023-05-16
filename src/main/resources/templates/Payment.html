@@ -6,7 +6,7 @@
 <body>
   <h1>Airline Payment Page</h1>
   
-  <form th:action="@{/Payment}" th:object="${cardinfo}" method="POST" >
+  <form th:action="@{/Payment}" th:object="${cardinfo}" method="POST"  >
 
     <label for="cardholderName">CardholderName</label>
     <input type="text" th:field="*{CardholderName}" id="cardholderName" name="cardholderName" required><br><br>
@@ -23,6 +23,7 @@
     <input type="submit" value="Pay" style="width: 50%; margin-left: 25%;font-size: larger; ">
   </form>
 </body>
+
 </html>
 <style>
 body {
