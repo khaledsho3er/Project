@@ -20,7 +20,8 @@ public class Reservation {
     private String id;
     private String src;
     private String dst;
-    private Date date;
+    private Date depdate;
+    private Date retdate;
     private int adults;
     private int children;
     private int travelclass;
@@ -31,14 +32,29 @@ public class Reservation {
     public Reservation() {
     }
 
-    public Reservation(String id, String src, String dst, Date date, int adults, int children, int travelclass) {
+    public Reservation(String id, String src, String dst, Date depdate, Date retdate, int adults, int children,
+            int travelclass) {
         this.id = id;
         this.src = src;
         this.dst = dst;
-        this.date = date;
+        this.depdate = depdate;
+        this.retdate = retdate;
         this.adults = adults;
         this.children = children;
         this.travelclass = travelclass;
+    }
+
+    public Reservation(String id, String src, String dst, Date depdate, Date retdate, int adults, int children,
+            int travelclass, User user) {
+        this.id = id;
+        this.src = src;
+        this.dst = dst;
+        this.depdate = depdate;
+        this.retdate = retdate;
+        this.adults = adults;
+        this.children = children;
+        this.travelclass = travelclass;
+        this.user = user;
     }
 
     public String getId() {
@@ -47,14 +63,6 @@ public class Reservation {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public User getUser() {
-        return this.user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     public String getSrc() {
@@ -73,12 +81,20 @@ public class Reservation {
         this.dst = dst;
     }
 
-    public Date getDate() {
-        return this.date;
+    public Date getDepdate() {
+        return this.depdate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDepdate(Date depdate) {
+        this.depdate = depdate;
+    }
+
+    public Date getRetdate() {
+        return this.retdate;
+    }
+
+    public void setRetdate(Date retdate) {
+        this.retdate = retdate;
     }
 
     public int getAdults() {
@@ -105,6 +121,14 @@ public class Reservation {
         this.travelclass = travelclass;
     }
 
+    public User getUser() {
+        return this.user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public Reservation id(String id) {
         setId(id);
         return this;
@@ -120,8 +144,13 @@ public class Reservation {
         return this;
     }
 
-    public Reservation date(Date date) {
-        setDate(date);
+    public Reservation depdate(Date depdate) {
+        setDepdate(depdate);
+        return this;
+    }
+
+    public Reservation retdate(Date retdate) {
+        setRetdate(retdate);
         return this;
     }
 
@@ -140,6 +169,11 @@ public class Reservation {
         return this;
     }
 
+    public Reservation user(User user) {
+        setUser(user);
+        return this;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -149,14 +183,15 @@ public class Reservation {
         }
         Reservation reservation = (Reservation) o;
         return Objects.equals(id, reservation.id) && Objects.equals(src, reservation.src)
-                && Objects.equals(dst, reservation.dst) && Objects.equals(date, reservation.date)
-                && adults == reservation.adults && children == reservation.children
-                && travelclass == reservation.travelclass;
+                && Objects.equals(dst, reservation.dst) && Objects.equals(depdate, reservation.depdate)
+                && Objects.equals(retdate, reservation.retdate) && adults == reservation.adults
+                && children == reservation.children && travelclass == reservation.travelclass
+                && Objects.equals(user, reservation.user);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, src, dst, date, adults, children, travelclass);
+        return Objects.hash(id, src, dst, depdate, retdate, adults, children, travelclass, user);
     }
 
     @Override
@@ -165,10 +200,12 @@ public class Reservation {
                 " id='" + getId() + "'" +
                 ", src='" + getSrc() + "'" +
                 ", dst='" + getDst() + "'" +
-                ", date='" + getDate() + "'" +
+                ", depdate='" + getDepdate() + "'" +
+                ", retdate='" + getRetdate() + "'" +
                 ", adults='" + getAdults() + "'" +
                 ", children='" + getChildren() + "'" +
                 ", travelclass='" + getTravelclass() + "'" +
+                ", user='" + getUser() + "'" +
                 "}";
     }
 
