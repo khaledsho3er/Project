@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+    <head>
+        <title>Flights</title>
+    </head>
+    <style>
+.body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.nav {
+  background-color: #333;
+  padding: 20px;
+  padding-bottom: 10px;
+}
+
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.nav li {
+  float: left;
+}
+
+.nav li a {
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav li a:hover {
+  background-color: #555;
+}
+.search-container {
+width: 70%;  
+margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  padding-top: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-group {
+  flex-grow: 1;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, select {
+  width: 90%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  border-spacing: 4px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+    .button-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: blue;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .button-link:hover {
+        background-color: blue  ;
+    }
+    </style>
+    <body>
+        <div class="nav">
+            
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a th:href="@{/addflights}">Flights</a></li>
+                  <li><a href="#">Destinations</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              
+        </div>
+        <div class="search">
+                <div class="search-container">
+                    <h1>Flight Search</h1>
+                    <form class="search-form">
+                      <div class="form-group">
+                        <label for="departure">Departure</label>
+                        <input type="text" id="departure" name="departure" placeholder="Departure City">
+                      </div>
+                      <div class="form-group">
+                        <label for="arrival">Arrival</label>
+                        <input type="text" id="arrival" name="arrival" placeholder="Arrival City">
+                      </div>
+                      <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date">
+                      </div>
+                      <div class="form-group">
+                        <label for="class">Class</label>
+                        <select id="class" name="class">
+                          <option value="economy">Economy</option>
+                          <option value="business">Business</option>
+                        </select>
+                      </div>
+                      <button type="submit">Search</button>
+                    </form>
+                  </div>
+            </form>
+        </div>
+        <div>
+        <p>Current Date and Time: <span id="datetime"></span></p>
+        <h1>Select your departure flight</h1>
+            </div>
+            <table>
+                <tr>
+                    <th>Flight ID</th>
+                    <th>Flight Type</th>
+                    <th>Departure City</th>
+                    <th>Arrival City</th>
+                    <th>Destination</th>
+                    <th>Departure Date</th>                   
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+                <tr th:each="flight : ${flights}">
+                    <td th:text="${flight.id}"></td>
+                    <td th:text="${flight.flight_type}"></td>
+                    <td th:text="${flight.depature_city}"></td>
+                    <td th:text="${flight.arrival_city}"></td>
+                    <td th:text="${flight.destination}"></td>
+                    <td th:text="${flight.departure_date}"></td>
+                    <td th:text="${flight.price_for_ticket}"></td>
+                    <td><a th:href="@{/payment}"class="button-link">Select</a></td>
+                </tr>
+                
+            </table>
+    </body>
+</html>
+<script>
+    function showDateTime() {
+      var currentDate = new Date();
+      var dateTimeString = currentDate.toLocaleString();
+      document.getElementById("datetime").textContent = dateTimeString;
+    }
+
+    // Call the function when the page loads
+    window.onload = showDateTime;
+  </script>
+               
