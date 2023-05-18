@@ -1,13 +1,11 @@
 
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymleaf.org">
+<html xmlns:th="http://www.thymleaf.org" >
 <head>
-    <title>Document</title>
+  <meta charset="UTF-8">
 </head>
 
 <body>
-	<main>
-
         <form th:action="@{/login/home}" th:object="${user}" method="POST">
             <h2>Login</h2>
              <input type="text" th:field="*{username}" placeholder="Enter Username" required>
@@ -16,27 +14,18 @@
                 <input type="checkbox" >
                 <span class="checkmark"></span>
               </label>
-			<input type="submit" class="button" value="login"></input>
-      <button type="button" value="Sign Up" style="background-color: #3f8ad6;
-      border: none;
-      border-radius: 5px;
-      color: #fff;
-      cursor: pointer;
-      font-size: 16px;
-      padding: 10px;
-      margin-top: 20px;
-      width: 90%;
-      margin-left: 5%;"><a th:href="@{/signup/adduser}">Sign Up</a></button>
+			<input type="submit" class="button" value="login" th:href="@{/Payment.html}"></input>
+      <button type="button" value="Sign Up" style="background-color: #3f8ad6; border: none; border-radius: 5px;color: #fff;cursor: pointer;font-size: 16px;padding: 10px;margin-top: 20px;width: 90%;margin-left: 5%;"><a th:href="@{/signup/adduser}">Sign Up</a></button>
 		</form>
-	</main>
 </body>
-</html>
+
 <style>
-    body {
+body 
+{
   font-family: Arial, sans-serif;
-  background-image: url("photo-1436491865332-7a61a109cc05.jpg");
+  background-image: url();
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size: cover;
 }
 
 
@@ -166,3 +155,4 @@ input[type="password"] {
 }
 
 </style>
+</html>
