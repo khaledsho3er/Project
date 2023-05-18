@@ -9,6 +9,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+import com.example.project.project.Services.MyAuthenticationSuccessHandler;
 import com.example.project.project.Services.UserServices;
 
 @Configuration
@@ -18,20 +19,25 @@ public class WebSecurityConfig {
     @Autowired
     private UserServices userService;
 
+   
+ MyAuthenticationSuccessHandler myAuthenticationSuccessHandler= new MyAuthenticationSuccessHandler();
+
+    
+
     @Bean
     public SecurityFilterChain filterchain(HttpSecurity httpSecurity) throws Exception
     {
         httpSecurity
         .userDetailsService(userService)
         .authorizeRequests()
-        .antMatchers("/signup/adduser","/login/save").permitAll()
+        .antMatchers("/signup/adduser","/login/save","/css/**","/images/**").permitAll()
         .anyRequest()
         .authenticated()
         .and()
         .formLogin()
         .loginPage("/login")
         .loginProcessingUrl("/login/home")
-        .defaultSuccessUrl("/home")
+        .successHandler(myAuthenticationSuccessHandler)
         .permitAll()
         .and()
         .logout()

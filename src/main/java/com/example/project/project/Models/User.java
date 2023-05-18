@@ -73,7 +73,7 @@ public class User implements UserDetails {
     }
 
     public void setUsername(String username) {
-        username = username;
+        this.username = username;
     }
 
     public String getEmail() {

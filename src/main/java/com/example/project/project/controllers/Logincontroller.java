@@ -46,6 +46,8 @@ public class Logincontroller {
          
        Authentication authenticated = this.authService.authenticate(authentication);
         SecurityContextHolder.getContext().setAuthentication(authenticated);
+
+       
         return "redirect:/home";
     }
 

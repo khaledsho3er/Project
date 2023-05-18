@@ -1,20 +1,24 @@
+
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymleaf.org">
-    
 <head>
-    <title>Signup </title>
+  <meta charset="UTF-8">
 </head>
 <body>
+  <h1>Signup </h1>
+  
+  <form th:action="@{/login/save}" th:object="${user}" method="POST" >
 
-    <div>
-        <form th:action="@{/login/save}" th:object="${user}" method="POST">
-            <input type="text" th:field="*{name}" placeholder="Enter Name">
-            <input type="password" th:field="*{password}"  placeholder="Enter password">
-            <input type="text" th:field="*{username}" placeholder="Enter Username">
-            <input type="text" th:field="*{email}" placeholder="Enter email">
-            <button type="submit">Signup</button>
-        </form>
-    </div>
+    <input type="text" th:field="*{name}" placeholder="Enter Name" required>
 
-</body>
+    <input type="password" th:field="*{password}"  placeholder="Enter password" required>
     
+    <input type="text" th:field="*{username}" placeholder="Enter Username"required>
+    
+    <input type="text" th:field="*{email}" placeholder="Enter email" required>
+
+    <button type="submit">Signup</button>
+  </form>
+</body>
+
 </html>
