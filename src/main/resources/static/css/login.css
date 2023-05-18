@@ -1,11 +1,10 @@
-.background {
-    width: 100%;
-    background-image: url('/images/background.jpg');
-}
-body
-{ font-family: Arial, sans-serif;
-background-repeat: no-repeat;
+body{
+  background: url("/images/background2.jpg")
+              no-repeat center center fixed;
+              font-family: Arial, sans-serif;
 background-size: cover;
+background-repeat: no-repeat;
+
 }
 h2 {
   margin: 0;
@@ -14,6 +13,7 @@ h2 {
 }
 a
 {
+  
     color: #fff;
 }
 form {
