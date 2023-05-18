@@ -19,7 +19,6 @@ public class Flights {
     private String id;
     private String flight_type;
     private String depature_city;
-    @Column(unique = true)
     private String arrival_city;
     private String destination;
     private String departure_date;
