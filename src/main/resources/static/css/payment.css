@@ -17,7 +17,19 @@ body {
     padding: 20px;
     justify-content: center;
     margin-top: 80px;
+    margin-right: 510px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 1.5);
+  }
+  .form2 {
+    background-color: #fff;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    justify-content: center;
+    margin-top: -675px;
+    margin-right: 1055px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1.5);
+    height:635px;
   }
   
   label {
