@@ -61,16 +61,23 @@
                     <th>Price</th>
                     <th></th>
                 </tr>
-                <tr th:each="flight : ${flights}">
-                    <td th:text="${flight.id}"></td>
-                    <td th:text="${flight.flight_type}"></td>
-                    <td th:text="${flight.depature_city}"></td>
-                    <td th:text="${flight.arrival_city}"></td>
-                    <td th:text="${flight.destination}"></td>
-                    <td th:text="${flight.departure_date}"></td>
-                    <td th:text="${flight.price_for_ticket}"></td>
-                    <td><a th:href="@{/payment}"class="button-link">Select</a></td>
-                </tr>
+                <form th:each="flight : ${flights}" th:action ="@{/reservation}" th:object="${flight}">
+                    <p th:text="${flight.id}"></p>
+                    <p th:text="${flight.flight_type}"></p>
+                    <p th:text="${flight.depature_city}"></p>
+                    <p th:text="${flight.arrival_city}"></p>
+                    <p th:text="${flight.destination}"></p>
+                    <p th:text="${flight.departure_date}"></p>
+                    <p th:text="${flight.price_for_ticket}"></p>
+                    <input type="hidden" th:name="id" th:value="${flight.id}"/>
+                    <input type="hidden" th:name="flight_type" th:value="${flight.flight_type}"/>
+                    <input type="hidden" th:name="depature_city" th:value="${flight.depature_city}"/>
+                    <input type="hidden" th:name="arrival_city" th:value="${flight.arrival_city}"/>
+                    <input type="hidden" th:name="destination" th:value="${flight.destination}"/>
+                    <input type="hidden" th:name="departure_date" th:value="${flight.departure_date}"/>
+                    <input type="hidden" th:name="price_for_ticket" th:value="${flight.price_for_ticket}"/>
+                    <button type="submit">select</button>
+                </form>
                 
             </table>
     </body>
