@@ -22,10 +22,21 @@ public class FlightSearchController {
     @RequestParam(name="arrival_city", required=false) String arrival_city,
     @RequestParam(name="departure_date", required=false) String departure_date,
     @RequestParam(name="flight_type", required=false) String flight_type) {
-        ModelAndView mav = new ModelAndView(); 
-        List<Flights> flights = flightRepositories.findByDepature_cityAndArrival_cityAndDeparture_dateAndFlight_type(depature_city, arrival_city,departure_date,flight_type);
-        mav.addObject("flights ", flights );
-        return mav;
+        if(depature_city == null && arrival_city == null && departure_date ==  null && flight_type == null)
+        {
+            ModelAndView mav = new ModelAndView("flights.html");
+            List<Flights> flights = flightRepositories.findAll();
+            mav.addObject("flights", flights);
+            return mav;
+            
+        }
+        
+            ModelAndView mav = new ModelAndView(); 
+            List<Flights> flights = flightRepositories.findByDepature_cityAndArrival_cityAndDeparture_dateAndFlight_type(depature_city, arrival_city,departure_date,flight_type);
+            mav.addObject("flights ", flights );
+            return mav;
+        
+       
     }
 
 }

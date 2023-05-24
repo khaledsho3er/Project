@@ -21,14 +21,14 @@ public class Flightcontroller {
     @Autowired
     private FlightRepositories FlightRepositories;
 
-    @GetMapping("/flights")
-    public ModelAndView flightView()
-    {
-        ModelAndView mav = new ModelAndView("flights.html");
-        List<Flights> flights = FlightRepositories.findAll();
-        mav.addObject("flights", flights);
-        return mav;
-    }
+    // @GetMapping("/flights")
+    // public ModelAndView flightView()
+    // {
+    //     ModelAndView mav = new ModelAndView("flights.html");
+    //     List<Flights> flights = FlightRepositories.findAll();
+    //     mav.addObject("flights", flights);
+    //     return mav;
+    // }s
 
     @GetMapping("/addflights")
     public ModelAndView Addflight()
