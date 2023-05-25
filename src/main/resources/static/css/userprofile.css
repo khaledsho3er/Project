@@ -31,7 +31,7 @@ h1 {
 }
 
 form, table {
-  background-color: #ffffff;
+  background-color: #121111;
   border: 1px solid #cccccc;
   padding: 20px;
   max-width: 600px;
@@ -80,9 +80,12 @@ table {
 th, td {
   text-align: left;
   padding: 8px;
+  color: #fff;
 }
-
+p{
+  color: #fff;
+}
 th {
   background-color: #4CAF50;
-  color: white;
+  color: white;
 }

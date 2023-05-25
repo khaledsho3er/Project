@@ -28,7 +28,7 @@
     <label for="cvv">CVV</label>
     <input type="password" th:field="*{cvv}" id="cvv" name="cvv" required><br><br>
 
-    <input type="submit" value="Pay" style="width: 50%; margin-left: 25%;font-size: larger; "th:href="@{/home.html}">
+    <input type="submit" value="Pay" style="width: 50%; margin-left: 25%;font-size: larger; "th:href="@{/home.html}" onclick="myFunction()">
   </form>
   <form action="@{/Payment}" method="post" class="form2">
     <h1>Flight Details</h1>
@@ -45,3 +45,8 @@
   </form>
 </body>
 </html>
+<script>
+  function myFunction() {
+  confirm("Confirmed");
+}
+</script>
