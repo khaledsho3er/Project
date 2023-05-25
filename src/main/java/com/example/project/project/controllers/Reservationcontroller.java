@@ -34,12 +34,7 @@ public class Reservationcontroller {
             @RequestParam(value = "destination", required = false) String destination,
             @RequestParam(value = "departure_date", required = false) String departure_date,
             @RequestParam(value = "price_for_ticket", required = false) String price_for_ticket) {
-        System.out.println(id);
-        System.out.println(flight_type);
-        System.out.println(arrival_city);
-        System.out.println(destination);
-        System.out.println(departure_date);
-        System.out.println(price_for_ticket);
+       
 
         ModelAndView mav = new ModelAndView("Reservation.html");
         Reservation reservation = new Reservation();

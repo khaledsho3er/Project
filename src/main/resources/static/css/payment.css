@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-image: url("/images/background.jpg");
+  background-image: url("/images/background.png");
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -16,28 +16,18 @@ form {
   margin: 0 auto;
   padding: 20px;
   justify-content: center;
-  margin-top: 80px;
-  margin-right: 510px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 1.5);
-}
-.form2 {
-  background-color: #fff;
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  justify-content: center;
-  margin-top: -675px;
-  margin-right: 1055px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 1.5);
-  height:635px;
 }
 
 label {
+  color: #fff;
   display: block;
   margin-bottom: 10px;
   font-weight: bold;
 }
-
+p{
+  color: #fff;
+}
 input[type="text"],
 input[type="number"],
 input[type="month"],
