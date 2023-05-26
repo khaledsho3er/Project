@@ -1,4 +1,4 @@
-
+<!-- 
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymleaf.org">
 <head>
@@ -34,4 +34,37 @@
 </body>
 </html>
 
+ -->
 
+
+ <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>EGWay-Login</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/authenticate.css}">
+        <!-- links for the font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body class="background">
+        <div class="box">
+
+            <form th:action="@{/login/home}" th:object="${user}"  name="login-form" method="post">
+                <div class="login">Login</div>
+
+                <input class="textbox" th:field="*{username}" type="text" name="user_name" placeholder="Username" ><br>
+               <br>
+
+                <input class="textbox" th:field="*{password}" type="password" name="password" placeholder="Password" ><br>
+                <br>
+                
+
+                <div style="text-align: center;"><input class="button" type="submit" value="Login"></div><br>
+
+               <p style="color: white; text-align: center;">Create a <a th:href="@{/signup/adduser}">new account</a></p>
+
+            </form>
+        </div>
+    </body>
+</html>
