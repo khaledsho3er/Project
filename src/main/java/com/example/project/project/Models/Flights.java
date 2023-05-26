@@ -3,8 +3,10 @@ package com.example.project.project.Models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -24,7 +26,8 @@ public class Flights {
     private String departure_date;
     private String price_for_ticket;
 
-    
+  
+  
     public Flights()
     {
         
