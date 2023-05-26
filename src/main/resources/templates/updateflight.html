@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Flight</title>
+    <style>
+        /* CSS styles */
+    </style>
+</head>
+<body>
+    <h2>Update Flight</h2>
+    <div>
+        <form th:action="@{/flights/save}" th:object="${flights}" method="post">
+            <label >flight_type :</label>
+            <p type="text" th:field="${flight_type}" th:text="${flight_type}" name="flight_type"  ></p>
+            <label >departure_date :</label>
+            <p type="text" th:field="${departure_date}"th:text="${departure_date}" name="departure_date"  ></p>
+            
+            <label >arrival_city :</label>
+            <p type="text" th:field="${arrival_city}" th:text="${arrival_city}" name="arrival_city"  ></p>
+            <label >depature_city:</label>
+            <p type="text" th:field="${depature_city}" th:text="${depature_city}" name="depature_city"  ></p>
+            <label >destination :</label>
+            <p type="text" th:field="${destination}" th:text="${destination}" name="destination"  ></p>
+            <label >Price :</label>
+            <p type="text" th:field="${price_for_ticket}" th:text="${price_for_ticket}" name="prices"  ></p>
+            <input type="hidden" th:name="flightId" th:value="${flightId}"/>
+            <label for="flightType">Flight Type:</label><br>
+        <input type="text" id="flightType" th:field="*{flight_type}" required><br><br>
+        
+        <label for="departureCity">Departure City:</label><br>
+        <input type="text" id="departureCity" th:field="*{depature_city}" required><br><br>
+        
+        <label for="arrivalCity">Arrival City:</label><br>
+        <input type="text" id="arrivalCity" th:field="*{arrival_city}" required><br><br>
+        
+        <label for="destination">Destination:</label><br>
+        <input type="text" id="destination" th:field="*{destination}" required><br><br>
+        
+        <label for="departureDate">Departure Date:</label><br>
+        <input type="text" id="departureDate" th:field="*{departure_date}" required><br><br>
+        
+        <label for="priceForTicket">Price for Ticket:</label><br>
+        <input type="text" id="priceForTicket" th:field="*{price_for_ticket}" required><br><br>
+        <input type="hidden" th:field="*{id}" />
+          
+            <button type="submit">Submit</button>
+          </form>
+    </div>
+</body>
+</html>

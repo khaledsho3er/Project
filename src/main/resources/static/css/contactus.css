@@ -3,11 +3,7 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
   }
-header {
-background-color: #333;
-color: #fff;
-padding: 20px;
-}
+
 
 nav ul {
 list-style-type: none;
@@ -35,15 +31,17 @@ text-decoration: none;
   } */
 
   .contact-form {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #fff;
     max-width: 500px;
     padding: 40px;
+    padding-left: 25px;
     border-radius: 5px;
   }
 
   .contact-form h2 {
     font-size: 24px;
     margin-bottom: 20px;
+    color: #0039a6;
     text-align: center;
   }
 
@@ -59,7 +57,7 @@ text-decoration: none;
 
   .contact-form button {
     padding: 10px;
-    background-color: #333;
+    background-color: #0039a6;
     color: #fff;
     border: none;
     border-radius: 5px;

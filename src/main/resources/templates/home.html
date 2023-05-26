@@ -3,58 +3,58 @@
 <head>
   <title>Airline Online System</title>
   <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
-</head>
-<body> 
-  <header>
-    <h1>Welcome to the Airline Online System</h1>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/nav.css}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+</head>    
+  <body>
     <nav>
+      <img th:src="@{/images/logo.png}" width="auto" height="40px" id=logo alt="Logo image"/>
       <ul>
         <li><a th:href="@{/home}">Home</a></li>
         <li><a th:href="@{/flights}">Flights</a></li>
         <li><a th:href="@{/contactus}">Contact Us</a></li>
-        <li><a th:href="@{/userprofile}">My Account</a></li>
-        <li><a th:href="@{/logout}">Logout</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)"th:href="@{/userprofile}" class="dropbtn">Profile</a>
+          <div class="dropdown-content">
+            <!-- <a th:href="@{/userprofile}">Profile</a> -->
+            <a th:href="@{/logout}">Logout</a>
+          </div>
+        </li>
       </ul>
-    </nav>
-  </header>
-  <body>
-    <div class="welcome-container" style="background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('/images/seat.png');
-    background-size: cover;
-    background-position: center;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;">
-      <div class="welcome-text">
-        <h1>Welcome User</h1>
-        <p>We hope that you enjoy our services.</p>
-      </div>
-    </div>
-  </body>
-  
-  </html>
-  
+    
+   
+  </nav>
+  <div class="slider">
+      
+    <img class="slide" th:src="@{/images/london.jpg}" alt="Image 1">
+    <img class="slide" th:src="@{/images/cairo.jpg}" alt="Image 2">
+    <img class="slide" th:src="@{/images/turkey.jpg}" alt="Image 3">
+    <div class="caption-slider">
+      <p>Explore the World with <span style="color:#0039a6">UNITED</span>.</p>
+  </div>
+  </div>
      <section class="special-offers">
-    <h3>Special Offers and Promotions</h3>
-    <div class="offer-list">
-      <div class="offer">
-        <img th:src="@{/images/offer1.jpg}" alt="Offer 1">
-        <div class="offer-info">
-          <h4>Summer Sale</h4>
-          <p>Book your summer getaway now and save up to 30% on selected flights. Limited time offer!</p>
-          <a href="#" class="btn-book">Book Now</a>
-        </div>
+    <h3>Recommendations</h3>
+    <div class="container">
+      <div class="image-container">
+        <a th:href="@{/flights}">    <img th:src="@{/images/london.jpg}" alt="Image 1"></a>
+          <div class="caption">
+              <p>Explore the wonders of London</p>
+          </div>
       </div>
-      <div class="offer">
-        <img th:src="@{/images/offer2.jpg}" alt="Offer 1">
-        <div class="offer-info">
-          <h4>Last Minute Deals</h4>
-          <p>Discover incredible last-minute flight deals to popular destinations. Don't miss out!</p>
-          <a href="#" class="btn-book">Book Now</a>
+      <div class="image-container">
+        <a th:href="@{/flights}"> <img th:src="@{/images/turkey.jpg}" alt="Image 1"></a>
+        <div class="caption">
+            <p>Enjoy the food in İstanbul</p>
         </div>
-      </div>
-      <!-- Add more offers here -->
     </div>
+      <div class="image-container">
+       <a th:href="@{/flights}">   <img th:src="@{/images/cairo.jpg}"  alt="Image 2"></a>
+          <div class="caption">
+              <p>Experience the beauty of Cairo Nights</p>
+          </div>
+      </div>
+  </div>
   </section>
    <main>
       <section>
@@ -66,6 +66,7 @@
     </main>
     
     <footer>
+      
       <p>&copy; 2023 Airline Online System. All rights reserved.</p>
     </footer>
   </body>

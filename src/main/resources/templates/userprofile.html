@@ -3,19 +3,28 @@
 <head>
   <title>User Account - Airline Booking System</title>
   <link rel="stylesheet" type="text/css"  th:href="@{/css/userprofile.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/nav.css}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+
+
 </head>
 <body >
 <header>
-    <nav>
-      <ul>
-        <li><a th:href="@{/home}">Home</a></li>
-        <li><a th:href="@{/flights}">Flights</a></li>
-        <li><a th:href="@{/Reservations}">Bookings</a></li>
-        <li><a th:href="@{/contactus}">Contact Us</a></li>
-        <li><a th:href="@{/userprofile}">My Account</a></li>
-        <li><a th:href="@{/logout}">Logout</a></li>
-      </ul>
-    </nav>
+  <nav>
+    <img th:src="@{/images/logo.png}" width="auto" height="40px" id=logo alt="Logo image" style="margin-left: 10px;padding-top: 10px;" />
+    <ul>
+      <li><a th:href="@{/home}">Home</a></li>
+      <li><a th:href="@{/flights}">Flights</a></li>
+      <li><a th:href="@{/contactus}">Contact Us</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)"th:href="@{/userprofile}" class="dropbtn">Profile</a>
+        <div class="dropdown-content">
+          <!-- <a th:href="@{/userprofile}">Profile</a> -->
+          <a th:href="@{/logout}">Logout</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
   </header>
   <body style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(/images/background.png);
   background-size: cover;
