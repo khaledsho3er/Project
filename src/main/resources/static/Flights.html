@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+  <title>Admin Account - Airline Booking System</title>
+  <link rel="stylesheet" type="text/css" href="my.css">
+</head>
+<header>
+    <nav>
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="#">Flights</a></li>
+        <li><a href="#">Reservation</a></li>
+        <li><a href="ContactUs.html">Contact Us</a></li>
+        <li><a href="my.html">My Account</a></li>
+        <li><a th:href="@{/logout}">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+<body>
+  <h1 <span style="color:white"></span>Flights</h1>
+  
+  
+  <div class="booking-history-section">
+    <h2 <span style="color:white"></span>Booking History</h2>
+    <table>
+      <tr>
+        <th>FlightID</th>
+        <th>FlightType</th>
+        <th>DepartureCity</th>
+        <th>ArrivalCity</th>
+        <th>DepartureDate</th>
+        <th>Price</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      <tr>
+        <td>FL123</td>
+        <td>Econmy</td>
+        <td>Pris</td>
+        <td>Cairo</td>
+        <td>17/3/2023</td>
+        <td>11.000LE</td>
+        <td>
+        <button>Edit</button>
+      </td>
+       <td>
+        <button>Delete</button>
+      </td>
+      </tr>
+      <!-- Add more rows for each booking -->
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+  <title>User Account - Airline Booking System</title>
+  <link rel="stylesheet" type="text/css" href="my.css">
+</head>
+<header>
+    <nav>
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="#">Flights</a></li>
+        <li><a href="#">Reservation</a></li>
+        <li><a href="ContactUs.html">Contact Us</a></li>
+        <li><a href="my.html">My Account</a></li>
+        <li><a th:href="@{/logout}">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+<body>
+  <h1 <span style="color:white"></span>Add Flight</h1>
+  
+  <div class="profile-section">
+    <form>
+      <div class="form-group">
+        <label for="flightId">Flight ID : </label>
+        <input type="text" id="flightId" name="flightId" required>
+      </div>
+     <div class="form-group">
+  <label for="FlightType">Flight Type</label>
+  <select id="FlightType" name="FlightType" required>
+    <option value="option1">Business</option>
+    <option value="option2">Economy</option>
+      </select>
+</div>
+
+      <div class="form-group">
+        <label for="Departure">Departure City:</label>
+        <input type="text" id="Departure" name="Departure" required>
+      </div>
+      <div class="form-group">
+        <label for="Arrival">Arrival City:</label>
+        <input type="text" id="Arrival" name="Arrival" required>
+      </div>
+      <div class="form-group">
+        <label for="dob">Departure Date</label>
+        <input type="date" id="dob" name="dob" required>
+      </div>
+      <div class="form-group">
+        <label for="Price">Price:</label>
+        <input type="text" id="Price" name="Price" required>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Add Flight">
+      </div>
+    </form>
+  </div>
+</form>
+ </div>
+</body>
+</html>

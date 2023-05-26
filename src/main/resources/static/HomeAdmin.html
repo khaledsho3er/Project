@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org"
+ <head>
+  <title>Airline Online System</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+h1, h2 {
+  margin-top: 0;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+label, input[type="submit"] {
+  margin: 5px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+.special-offers {
+  padding: 50px;
+  background-color: #f0f0f0;
+}
+
+h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.offer-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.offer {
+  width: calc(50% - 20px);
+  margin-bottom: 20px;
+}
+
+.offer img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.offer-info {
+  padding: 10px;
+  background-color: #fff;
+}
+
+.offer-info h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.offer-info p {
+  margin-bottom: 10px;
+}
+
+.btn-book {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+</style>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="#">Flights</a></li>
+        <li><a href="#">Reservation</a></li>
+        <li><a href="ContactUs.html">Contact Us</a></li>
+        <li><a href="my.html">My Account</a></li>
+        <li><a th:href="@{/logout}">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome User</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .welcome-container {
+      background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('seat.png');
+      background-size: cover;
+      background-position: center;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .welcome-text {
+      text-align: center;
+      color: #fff;
+    }
+
+    .welcome-text h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="welcome-container">
+    <div class="welcome-text">
+      <h1>Home Admin</h1>
+    </div>
+  </div>
+</body>
+
+</html>
+
+   <section class="special-offers">
+  <h3>Special Offers and Promotions</h3>
+  <div class="offer-list">
+    <div class="offer">
+      <img src="summer.jpg" alt="Offer 1">
+      <div class="offer-info">
+        <h4>Summer Sale</h4>
+        <p>Book your summer getaway now and save up to 30% on selected flights. Limited time offer!</p>
+         <a href="#" class="btn-book">Edit</a>
+        <a href="#" class="btn-book">Delete</a>
+
+      </div>
+    </div>
+    <div class="offer">
+      <img src="last.jpg" alt="Offer 2">
+      <div class="offer-info">
+        <h4>Last Minute Deals</h4>
+        <p>Discover incredible last-minute flight deals to popular destinations. Don't miss out!</p>
+        <a href="#" class="btn-book">Edit</a>
+        <a href="#" class="btn-book">Delete</a>
+
+      </div>
+    </div>
+    <!-- Add more offers here -->
+  </div>
+</section>
+ <main>
+    <section>
+      <h2>About Us</h2>
+      <p><b>Welcome to our online booking airline system! We are dedicated to making your travel experience seamless and enjoyable.</b></p>
+  <p>At our system, we understand that traveling is more than just getting from one place to another. It's about creating memories, exploring new destinations, and connecting with people and cultures. That's why we strive to provide you with the best possible service and options for your travel needs.</p>
+    </section>
+
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 Airline Online System. All rights reserved.</p>
+  </footer>
+</body>
+</html>
