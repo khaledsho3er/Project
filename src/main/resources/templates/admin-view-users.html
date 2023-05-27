@@ -1,6 +1,46 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymleaf.org">
 
+    <head>
+        <title>Flights</title>
+        <!-- <link rel="stylesheet" type="text/css" th:href="@{/css/flights.css}"> -->
+
+    </head>
+    <body style=" background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('/images/info.png');background-size: cover;background-position: center;background-repeat: no-repeat;">
+        <div>
+            </div>
+            <div class="buttons">
+                <button >Add Flight</button>
+            </div>
+            <table>
+                <tr>
+                    <th>User ID</th>
+                    <th>Name</th>
+                    <!-- <th>Password</th> -->
+                    <th>UserName</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                    <th></th>
+                </tr>       
+
+              
+
+
+                  <form th:each="user : ${user}"  th:object="${user}"> 
+                    <tr>
+                        <td th:field="${id}" th:text="${user.id}"></td>
+                        <td th:field="${name}" th:text="${user.name}"></td>
+                        <!-- <td th:field="${password}" th:text="${user.passsword}"></td> -->
+                        <td th:field="${username}" th:text="${user.username}"></td>
+                        <td th:field="${email}" th:text="${user.email}"></td>
+                        <td> <button class="buttons" >edit</button> <button class="buttons" >delete</button></td>
+                      </tr>
+
+            </table>
+        </body>
+</html>
+
+
 <head>
   <title>Flights</title>
   <link rel="stylesheet" type="text/css" th:href="@{/css/nav.css}">
@@ -66,4 +106,4 @@
 
   // Call the function when the page loads
   window.onload = showDateTime;
-</script>
+

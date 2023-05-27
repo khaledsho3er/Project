@@ -4,7 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -38,6 +37,15 @@ public class Admincontroller {
         return mav;
     }
 
+
+     @GetMapping("/admin-view-flights")
+    public ModelAndView getadminviewflights()
+    {
+        ModelAndView mav = new ModelAndView("admin-view-flights.html");
+        List<Flights> flights = FlightRepositories.findAll();
+            mav.addObject("flight", flights);
+            return mav;
+    }
     @GetMapping("/admin-viewflights")
     public ModelAndView viewflight()
     {
@@ -45,6 +53,7 @@ public class Admincontroller {
         List<Flights> flights = FlightRepositories.findAll();
         mav.addObject("flights", flights);
         return mav;
+
     }
 
         @GetMapping("/admin-view-users")
@@ -55,6 +64,7 @@ public class Admincontroller {
                 mav.addObject("user", user);
                 return mav;
         }  
+
         // @GetMapping("/admin-addflights")
         // public ModelAndView Addflight()
         // {
@@ -104,16 +114,20 @@ public class Admincontroller {
             mav.addObject("flights", oldFlight);
             return mav;
         }
+
     @GetMapping("/delete-flight")
     public String getdeleteflight(@RequestParam String flightID)
     {
         this.FlightRepositories.deleteById(flightID);
-        return "redirect:/admin/admin-viewflights";
+
+        return "redirect:/admin/admin-view-flights";
 
     }
+
     @PostMapping("/admin-flights-save")
     public String saveFlights(@ModelAttribute Flights Flights){
         this.FlightRepositories.save(Flights);
         return "redirect:/admin/admin-viewflights";
     }
+
 }
