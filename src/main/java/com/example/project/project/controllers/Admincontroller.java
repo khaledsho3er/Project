@@ -3,6 +3,8 @@ package com.example.project.project.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -35,7 +37,7 @@ public class Admincontroller {
         return mav;
     }
 
-<<<<<<< HEAD
+
      @GetMapping("/admin-view-flights")
     public ModelAndView getadminviewflights()
     {
@@ -43,7 +45,7 @@ public class Admincontroller {
         List<Flights> flights = FlightRepositories.findAll();
             mav.addObject("flight", flights);
             return mav;
-=======
+    }
     @GetMapping("/admin-viewflights")
     public ModelAndView viewflight()
     {
@@ -51,7 +53,7 @@ public class Admincontroller {
         List<Flights> flights = FlightRepositories.findAll();
         mav.addObject("flights", flights);
         return mav;
->>>>>>> f49a7a9715a1dc31de7400d645e22e35b11fc80e
+
     }
 
         @GetMapping("/admin-view-users")
@@ -62,10 +64,7 @@ public class Admincontroller {
                 mav.addObject("user", user);
                 return mav;
         }  
-<<<<<<< HEAD
-        
-        
-=======
+
         // @GetMapping("/admin-addflights")
         // public ModelAndView Addflight()
         // {
@@ -115,24 +114,20 @@ public class Admincontroller {
             mav.addObject("flights", oldFlight);
             return mav;
         }
->>>>>>> f49a7a9715a1dc31de7400d645e22e35b11fc80e
+
     @GetMapping("/delete-flight")
     public String getdeleteflight(@RequestParam String flightID)
     {
         this.FlightRepositories.deleteById(flightID);
-<<<<<<< HEAD
+
         return "redirect:/admin/admin-view-flights";
 
     }
 
-=======
-        return "redirect:/admin/admin-viewflights";
-
-    }
     @PostMapping("/admin-flights-save")
     public String saveFlights(@ModelAttribute Flights Flights){
         this.FlightRepositories.save(Flights);
         return "redirect:/admin/admin-viewflights";
     }
->>>>>>> f49a7a9715a1dc31de7400d645e22e35b11fc80e
+
 }
