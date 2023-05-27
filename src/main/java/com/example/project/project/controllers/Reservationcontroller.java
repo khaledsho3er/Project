@@ -62,5 +62,16 @@ public class Reservationcontroller {
         this.reservationRepositiory.save(reserv);
         return "redirect:/Payment?reservationId=" + reserv.getId();
     }
+    @GetMapping("/admin-reservation")
+    public ModelAndView profileform(){
+
+        ModelAndView mav = new ModelAndView("admin-reservation.html");
+
+       List <Reservation> reservations = reservationRepositiory.findAll();
+       mav.addObject("reservations", reservations);
+
+
+        return mav;
+    }
 
 }

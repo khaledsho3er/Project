@@ -1,55 +1,69 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymleaf.org">
-    <head>
-        <title>Flights</title>
-        <!-- <link rel="stylesheet" type="text/css" th:href="@{/css/flights.css}"> -->
 
-    </head>
-    <body style=" background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('/images/info.png');background-size: cover;background-position: center;background-repeat: no-repeat;">
-        <nav>
-            <img th:src="@{/images/logo.png}" width="auto" height="40px" id=logo alt="Logo image"/>
-            <ul>
-              <li><a th:href="@{/admin}">Home</a></li>
-              <li><a th:href="@{/admin/admin-viewflights}">Flights</a></li>
-              <li><a th:href="@{/contactus}">Contact Us</a></li>
-              <li class="dropdown">
-                <a href="javascript:void(0)"th:href="@{/admin/userprofile}" class="dropbtn">Profile</a>
-                <div class="dropdown-content">
-                  <!-- <a th:href="@{/userprofile}">Profile</a> -->
-                  <a th:href="@{/logout}">Logout</a>
-                </div>
-              </li>
-            </ul>
-        </nav>
-        <div>
-            </div>
-            <div class="buttons">
-                <button >Add Flight</button>
-            </div>
-            <table>
-                <tr>
-                    <th>User ID</th>
-                    <th>Name</th>
-                    <!-- <th>Password</th> -->
-                    <th>UserName</th>
-                    <th>Email</th>
-                    <th>Actions</th>
-                    <th></th>
-                </tr>       
+<head>
+  <title>Flights</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/nav.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/flights.css}">
 
-              
+</head>
+
+<body
+  style="background-attachment: fixed; background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('/images/info.png');background-size: cover;background-position: center;background-repeat: no-repeat;">
+  <nav>
+    <img th:src="@{/images/logo.png}" width="auto" height="40px" id=logo alt="Logo image"/>
+    <ul>
+      <li><a th:href="@{/admin}">Home</a></li>
+      <li><a th:href="@{/admin/admin-viewflights}">Flights</a></li>
+      <li><a th:href="@{/admin/admin-view-users}">Users</a></li>
+      <li><a th:href="@{/reservation/admin-reservation}">Reservations</a></li>
+          <li><a th:href="@{/logout}">Logout</a></li>
+        </div>
+      </li>
+    </ul>
+</nav>
+  <div>
+  </div>
+
+  <div>
+    <p>Current Date and Time: <span id="datetime"></span></p>
+    <h1 style="color: #fff;text-align: center">Update User's Role</h1>
+        </div>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>UserName</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Update Role</th>
+    </tr>
 
 
-                  <form th:each="user : ${user}"  th:object="${user}"> 
-                    <tr>
-                        <td th:field="${id}" th:text="${user.id}"></td>
-                        <td th:field="${name}" th:text="${user.name}"></td>
-                        <!-- <td th:field="${password}" th:text="${user.passsword}"></td> -->
-                        <td th:field="${username}" th:text="${user.username}"></td>
-                        <td th:field="${email}" th:text="${user.email}"></td>
-                        <td> <button class="buttons" >edit</button> <button class="buttons" >delete</button></td>
-                      </tr>
 
-            </table>
-        </body>
+
+    <form th:each="user : ${user}" th:object="${user}">
+      <tr>
+
+        <td th:field="${name}" th:text="${user.name}"></td>
+        <td th:field="${username}" th:text="${user.username}"></td>
+        <td th:field="${email}" th:text="${user.email}"></td>
+        <td th:field="${role}" th:text="${user.role}"></td>
+        <td> <button class="buttons">edit</button> </td>
+      </tr>
+
+  </table>
+  
+</body>
+
 </html>
+<script>
+  function showDateTime() {
+    var currentDate = new Date();
+    var dateTimeString = currentDate.toLocaleString();
+    document.getElementById("datetime").textContent = dateTimeString;
+  }
+
+  // Call the function when the page loads
+  window.onload = showDateTime;
+</script>
