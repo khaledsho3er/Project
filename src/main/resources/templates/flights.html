@@ -50,6 +50,7 @@
         <p>Current Date and Time: <span id="datetime"></span></p>
         <h1>Select your departure flight</h1>
             </div>
+            <div>
             <table>
                 <tr>
                     <th>Flight ID</th>
@@ -59,13 +60,15 @@
                     <th>Destination</th>
                     <th>Departure Date</th>                   
                     <th>Price</th>
-                    <th></th>
+                    <th>Select</th>
+                    
                 </tr>
              
                   <form th:each="flight : ${flights}" th:action ="@{/reservation}" th:object="${flight}">
                       <tr>
                         <td th:field="${id}" th:text="${flight.id}"></td>
                         <td th:field="${flight_type}" th:text="${flight.flight_type}"></td>
+                         <td th:field="${depature_city}" th:text="${flight.depature_city}"></td>
                         <td th:field="${arrival_city}" th:text="${flight.arrival_city}"></td>
                         <td th:field="${destination}" th:text="${flight.destination}"></td>
                         <td th:field="${departure_date}" th:text="${flight.departure_date}"></td>
@@ -84,7 +87,7 @@
                 
                   
                 
-            </table>
+                  </table>
     </body>
 </html>
 <script>
