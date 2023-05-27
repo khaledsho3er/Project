@@ -57,12 +57,7 @@ public class Logincontroller {
         ModelAndView mav = new ModelAndView("home.html");
         return mav;
     }
-    @GetMapping("/userprofile")
-    public ModelAndView getUserProfile()
-    {
-        ModelAndView mav = new ModelAndView("userprofile.html");
-        return mav;
-    }
+   
     @GetMapping("/contactus")
     public ModelAndView getContactUs()
     {

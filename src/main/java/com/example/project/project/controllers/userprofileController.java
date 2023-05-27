@@ -44,6 +44,10 @@ public class userprofileController {
     }
        
 
-   
+    //     reserv.setUser(user);
+    //     reserv.setFlights(flight);
+    //     this.reservationRepositiory.save(reserv);
+    //     return "redirect:/Payment?reservationId=" + reserv.getId();
+    // }
 
 }

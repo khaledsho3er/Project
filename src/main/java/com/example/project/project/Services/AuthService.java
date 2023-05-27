@@ -30,7 +30,7 @@ public class AuthService implements AuthenticationProvider {
         throw new UsernameNotFoundException("Inavlid Username");
        }
 
-       if(this.bCryptPasswordEncoder.matches(password,userdetails.getPassword()))
+       if(!this.bCryptPasswordEncoder.matches(password,userdetails.getPassword()))
        {
             throw new UsernameNotFoundException("Inavalid Password");
        }

@@ -30,7 +30,12 @@ public class WebSecurityConfig {
         httpSecurity
         .userDetailsService(userService)
         .authorizeRequests()
-        .antMatchers("/signup/adduser","/login/save","/css/**","/images/**").permitAll()
+        .antMatchers("/admin","/admin-view-fligh")
+        .hasAuthority("Admin")
+        .and()
+        .authorizeRequests()
+        .antMatchers("/signup/adduser","/login/save","/css/**","/images/**")
+        .permitAll()
         .anyRequest()
         .authenticated()
         .and()
