@@ -3,13 +3,6 @@ package com.example.project.project.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-<<<<<<< HEAD
-import org.springframework.web.bind.annotation.PathVariable;
-=======
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
->>>>>>> f49a7a9715a1dc31de7400d645e22e35b11fc80e
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
