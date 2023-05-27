@@ -1,23 +1,31 @@
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymleaf.org">
     <head>
         <title>Flights</title>
         <link rel="stylesheet" type="text/css" th:href="@{/css/flights.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/css/nav.css}">
+
 
     </head>
     <body style=" background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('/images/info.png');background-size: cover;background-position: center;background-repeat: no-repeat;">
-        <div class="nav">
-            
-          <ul>
-            <li><a th:href="@{/home}">Home</a></li>
-            <li><a th:href="@{/flights}">Flights</a></li>
-            <li><a th:href="@{/Reservations}">Bookings</a></li>
-            <li><a th:href="@{/contactus}">Contact Us</a></li>
-            <li><a th:href="@{/userprofile}">My Account</a></li>
-            <li><a th:href="@{/logout}">Logout</a></li>
-          </ul>
-              
-        </div>
+      <nav>
+        <img th:src="@{/images/logo.png}" width="auto" height="40px" id=logo alt="Logo image"/>
+        <ul>
+          <li><a th:href="@{/home}">Home</a></li>
+          <li><a th:href="@{/flights}">Flights</a></li>
+          <li><a th:href="@{/contactus}">Contact Us</a></li>
+          <li class="dropdown">
+            <a href="javascript:void(0)"th:href="@{/userprofile}" class="dropbtn">Profile</a>
+            <div class="dropdown-content">
+              <!-- <a th:href="@{/userprofile}">Profile</a> -->
+              <li><a th:href="@{/logout}">Logout</a></li>
+            </div>
+          </li>
+        </ul>
+      
+     
+    </nav>
         <div class="search">
                 <div class="search-container">
                     <h1>Flight Search</h1>
@@ -66,6 +74,7 @@
                       <tr>
                         <td th:field="${id}" th:text="${flight.id}"></td>
                         <td th:field="${flight_type}" th:text="${flight.flight_type}"></td>
+                        <td th:field="${depature_city}" th:text="${flight.depature_city}"></td>
                         <td th:field="${arrival_city}" th:text="${flight.arrival_city}"></td>
                         <td th:field="${destination}" th:text="${flight.destination}"></td>
                         <td th:field="${departure_date}" th:text="${flight.departure_date}"></td>
