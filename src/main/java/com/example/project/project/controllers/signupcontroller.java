@@ -38,7 +38,7 @@ public class signupcontroller {
     @PostMapping("/login/save")
     public String saveuser(@ModelAttribute User user)
     {
-        System.out.println(user.getUsername());
+        
         String passwordHashed = this.bCryptPasswordEncoder.encode(user.getPassword());
         user.setPassword(passwordHashed);
         this.userRepositories.save(user);
