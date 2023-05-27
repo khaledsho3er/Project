@@ -1,0 +1,66 @@
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("/images/info.png");
+    background-blend-mode:multiply;
+    background-size: cover;
+    background-repeat: no-repeat;
+  
+  }
+  
+  h2 {
+    text-align: center;
+    color: white;
+  }
+  
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 30px;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1.5);
+  }
+  
+  label {
+    color: #fff;
+    display: block;
+    font-weight: bold;
+  }
+  p{
+    color: #fff;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  button[type="submit"] {
+    background-color: #9c9fa1;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #9c9fa1;
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 600px) {
+    form {
+      padding: 10px;
+  
+    }
+    
+    input[type="submit"] {
+      padding: 8px 16px;
+    }
+  }
+  
+  

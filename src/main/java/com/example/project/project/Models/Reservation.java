@@ -4,6 +4,8 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -27,7 +29,12 @@ public class Reservation {
     @ManyToOne
     private User user;
 
+    @Enumerated(value = EnumType.STRING)
+    private Status status = Status.pending;
+
+
     public Reservation() {
+        
     }
 
     public Reservation(String id, int adults, int children, Flights flights, User user) {
@@ -101,6 +108,15 @@ public class Reservation {
     public Reservation user(User user) {
         setUser(user);
         return this;
+    }
+
+    
+    public Status getStatus() {
+        return status= Status.Approved;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     @Override

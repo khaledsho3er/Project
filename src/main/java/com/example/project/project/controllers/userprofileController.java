@@ -36,7 +36,6 @@ public class userprofileController {
         return mav;
     }
 
-
     @GetMapping("/delete-reservation")
     public String getdeletereservation(@RequestParam String id)
     {
@@ -47,7 +46,8 @@ public class userprofileController {
     // public String savereserv(@ModelAttribute Flights flight, @AuthenticationPrincipal User user,
     //         @RequestParam(name = "flightId", required = true) String flightId) {
 
-    //     Flights flight = this.FlightRepositories.findById(flightId).orElse(null);
+
+    
 
     //     reserv.setUser(user);
     //     reserv.setFlights(flight);
