@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymleaf.org" >
+    <link rel="stylesheet" type="text/css" th:href="@{/css/nav.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
 <head>
     
     <title>Admin</title>
 </head>
 <body>
+<<<<<<< HEAD
     <h1>welcome Admin</h1>
     <a th:href="@{/admin/admin-view-flights}">flights</a>
     <a th:href="@{/admin/admin-view-users}">users</a>
+=======
+    <nav>
+        <img th:src="@{/images/logo.png}" width="auto" height="40px" id=logo alt="Logo image"/>
+        <ul>
+          <li><a th:href="@{/admin}">Home</a></li>
+          <li><a th:href="@{/admin/admin-viewflights}">Flights</a></li>
+          <li><a th:href="@{/admin/admin-view-users}">Users</a></li>
+          <li><a th:href="@{/reservation/admin-reservation}">Reservations</a></li>
+              <li><a th:href="@{/logout}">Logout</a></li>
+            </div>
+          </li>
+        </ul>
+    </nav>
+    <h1 style="text-align: center;margin-top: 0px;font-family:'Poppins', sans-serif ;">Welcome Admin</h1>
+    <div class="slider">
+    <img class="slide" th:src="@{/images/london.jpg}" alt="Image 1">
+    <div class="caption-slider">
+      <p>Explore the World with <span style="color:#0039a6">UNITED</span>.</p>
+  </div>
+</div>
+<footer>
+      
+  <p>&copy; 2023 Airline Online System. All rights reserved.</p>
+</footer>
+>>>>>>> f49a7a9715a1dc31de7400d645e22e35b11fc80e
 </body>
 </html>
