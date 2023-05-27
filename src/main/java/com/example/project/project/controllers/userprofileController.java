@@ -36,13 +36,7 @@ public class userprofileController {
         return mav;
     }
 
-    @GetMapping("/delete-reservation")
-    public String getdeletereservation(@RequestParam String id)
-    {
-        this.reservationRepositiory.deleteById(id);
-        return "redirect:/userprofile";
-    }
-       
+    
 
     //     reserv.setUser(user);
     //     reserv.setFlights(flight);
