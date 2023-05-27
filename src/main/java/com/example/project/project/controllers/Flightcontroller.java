@@ -56,18 +56,18 @@ public class Flightcontroller {
        
     }
 
-    @GetMapping("/addflights")
-    public ModelAndView Addflight()
-    {
-        ModelAndView mav= new ModelAndView("addflights.html");
-        Flights addflight=new Flights();
-        mav.addObject("Flights", addflight);
-        return mav;
-    }
+    // @GetMapping("/addflights")
+    // public ModelAndView Addflight()
+    // {
+    //     ModelAndView mav= new ModelAndView("addflights.html");
+    //     Flights addflight=new Flights();
+    //     mav.addObject("Flights", addflight);
+    //     return mav;
+    // }
    
-    @PostMapping("saveFlights")
-    public String saveFlights(@ModelAttribute Flights Flights){
-        this.FlightRepositories.save(Flights);
-        return "redirect:/flights";
-    }
+    // @PostMapping("saveFlights")
+    // public String saveFlights(@ModelAttribute Flights Flights){
+    //     this.FlightRepositories.save(Flights);
+    //     return "redirect:/flights";
+    // }
 }

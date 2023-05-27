@@ -6,6 +6,21 @@
 
     </head>
     <body style=" background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('/images/info.png');background-size: cover;background-position: center;background-repeat: no-repeat;">
+        <nav>
+            <img th:src="@{/images/logo.png}" width="auto" height="40px" id=logo alt="Logo image"/>
+            <ul>
+              <li><a th:href="@{/admin}">Home</a></li>
+              <li><a th:href="@{/admin/admin-viewflights}">Flights</a></li>
+              <li><a th:href="@{/contactus}">Contact Us</a></li>
+              <li class="dropdown">
+                <a href="javascript:void(0)"th:href="@{/admin/userprofile}" class="dropbtn">Profile</a>
+                <div class="dropdown-content">
+                  <!-- <a th:href="@{/userprofile}">Profile</a> -->
+                  <a th:href="@{/logout}">Logout</a>
+                </div>
+              </li>
+            </ul>
+        </nav>
         <div>
             </div>
             <div class="buttons">

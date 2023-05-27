@@ -1,0 +1,77 @@
+<!-- <!DOCTYPE html>
+ <html xmlns:th="http://www.thymleaf.org">
+    
+<head>
+  <meta charset="UTF-8">
+    <title>Add Flights </title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/addflights.css}">
+
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="form-container">
+      <h1>Add Flights</h1>
+      <form class="search-form" th:action="@{/flights/save}" th:object="${newflights}" method="POST">
+        <input type="text" id="arrival_city" th:field="*{arrival_city}" placeholder="Enter Departure City" required>
+        <input type="text" th:field="*{departure_date}" placeholder="Enter Arrival City"required>
+        <input type="text" th:field="*{depature_city}" placeholder="Enter Destination"required>
+        <input type="text" th:field="*{destination}" placeholder="Enter Flight Type"required>
+        <input type="text" th:field="*{flight_type}" placeholder="Enter Departure Date"required>
+        <input type="text" th:field="*{price_for_ticket}" placeholder="Enter Price for Ticket"required>
+        <button type="submit">Add Flight</button> 
+    </form> 
+    </div>
+    <div>
+    
+</body>
+</html>  -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Flights</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/addflights.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/nav.css}">
+
+</head>
+<body>
+    <nav>
+        <img th:src="@{/images/logo.png}" width="auto" height="40px" id=logo alt="Logo image"/>
+        <ul>
+          <li><a th:href="@{/admin}">Home</a></li>
+          <li><a th:href="@{/admin/admin-viewflights}">Flights</a></li>
+          <li><a th:href="@{/contactus}">Contact Us</a></li>
+          <li class="dropdown">
+            <a href="javascript:void(0)"th:href="@{/admin/userprofile}" class="dropbtn">Profile</a>
+            <div class="dropdown-content">
+              <!-- <a th:href="@{/userprofile}">Profile</a> -->
+              <a th:href="@{/logout}">Logout</a>
+            </div>
+          </li>
+        </ul>
+    </nav>
+    <h1>Add Flights</h1>
+    <form th:action="@{/admin/admin-flights-save}" th:object="${Flights}" method="post">
+        <label for="flightType">Flight Type:</label><br>
+        <input type="text" id="flightType" th:field="*{flight_type}" required><br><br>
+        
+        <label for="departureCity">Departure City:</label><br>
+        <input type="text" id="departureCity" th:field="*{depature_city}" required><br><br>
+        
+        <label for="arrivalCity">Arrival City:</label><br>
+        <input type="text" id="arrivalCity" th:field="*{arrival_city}" required><br><br>
+        
+        <label for="destination">Destination:</label><br>
+        <input type="text" id="destination" th:field="*{destination}" required><br><br>
+        
+        <label for="departureDate">Departure Date:</label><br>
+        <input type="text" id="departureDate" th:field="*{departure_date}" required><br><br>
+        
+        <label for="priceForTicket">Price for Ticket:</label><br>
+        <input type="text" id="priceForTicket" th:field="*{price_for_ticket}" required><br><br>
+        <input type="hidden" th:field="*{id}" />
+
+        <input type="submit" value="Save">
+    </form>
+</body>
+</html>
