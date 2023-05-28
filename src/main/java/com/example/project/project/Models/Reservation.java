@@ -2,34 +2,20 @@ package com.example.project.project.Models;
 
 import java.sql.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
-import org.hibernate.annotations.GenericGenerator;
 import java.util.Objects;
 
-@Entity
 public class Reservation {
-    @Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+ 
     private String id;
     private int adults;
     private int children;
 
-    @ManyToOne
+    
     private Flights flights;
 
-    @ManyToOne
     private User user;
 
-    @Enumerated(value = EnumType.STRING)
+ 
     private Status status = Status.pending;
 
 

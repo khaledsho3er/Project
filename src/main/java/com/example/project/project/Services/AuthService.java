@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class AuthService implements AuthenticationProvider {
 
@@ -45,5 +46,10 @@ public class AuthService implements AuthenticationProvider {
     public boolean supports(Class<?> authentication) {
         
     return authentication.equals(UsernamePasswordAuthenticationToken.class);
+    }
+
+    public org.apache.tomcat.util.net.openssl.ciphers.Authentication authenticate(
+            org.apache.tomcat.util.net.openssl.ciphers.Authentication authentication) {
+        return null;
     }
 }

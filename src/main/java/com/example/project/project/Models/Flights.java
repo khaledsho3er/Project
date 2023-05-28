@@ -1,23 +1,10 @@
 package com.example.project.project.Models;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
-
-import org.hibernate.annotations.GenericGenerator;
-
-@Entity
 public class Flights {
-    @Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(
-        name = "UUID",
-        strategy = "org.hibernate.id.UUIDGenerator"
-    )
+ 
+    
     private String id;
     private String flight_type;
     private String depature_city;

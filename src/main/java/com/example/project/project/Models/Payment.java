@@ -2,23 +2,12 @@ package com.example.project.project.Models;
 
 import java.sql.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
-import org.hibernate.annotations.GenericGenerator;
 import java.util.Objects;
 
-@Entity
 public class Payment {
 
-    @Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(
-        name = "UUID",
-        strategy = "org.hibernate.id.UUIDGenerator"
-    )
+ 
     private String ID;
     private String cardNumber;
     private String cardholderName;

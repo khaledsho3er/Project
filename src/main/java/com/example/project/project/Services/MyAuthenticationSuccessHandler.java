@@ -12,12 +12,11 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
-import com.example.project.project.repositories.UserRepositories;
 
 public class MyAuthenticationSuccessHandler implements AuthenticationSuccessHandler  {
 
     @Autowired
-    public UserRepositories userRepositories;
+    public UserServices UserServices;
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
