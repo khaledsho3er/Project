@@ -16,6 +16,11 @@ public interface FlightRepositories extends JpaRepository<Flights,String> {
         @Param("arrivalCity") String arrivalCity,
         @Param("departureDate") String departure_date, 
         @Param("flightType") String flight_type);
+
+    // @Query("SELECT * FROM Flights f WHERE f.arrival_city LIKE %:search%")
+    // List<Flights> searchMyPostsJpql(String search);
+
+    // List<Flights> findByDeparture_city(String search);
     
    
     
