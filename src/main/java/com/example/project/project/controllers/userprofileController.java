@@ -36,6 +36,7 @@ public class userprofileController {
         return mav;
     }
 
+
     @GetMapping("/delete-reservation")
     public String getdeletereservation(@RequestParam String id)
     {
@@ -54,5 +55,6 @@ public class userprofileController {
     //     this.reservationRepositiory.save(reserv);
     //     return "redirect:/Payment?reservationId=" + reserv.getId();
     // }
+
 
 }

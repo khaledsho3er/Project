@@ -24,6 +24,7 @@ import com.example.project.project.repositories.UserRepositories;
 @Controller
 @RequestMapping("/admin")
 public class Admincontroller {
+
     @Autowired
       private FlightRepositories FlightRepositories;
 
@@ -129,5 +130,6 @@ public class Admincontroller {
         this.FlightRepositories.save(Flights);
         return "redirect:/admin/admin-viewflights";
     }
+
 
 }

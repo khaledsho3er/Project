@@ -2,6 +2,7 @@ package com.example.project.project.controllers;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -81,4 +82,41 @@ public class Reservationcontroller {
     }
       
 
+    @GetMapping("/admin-reservations")
+    public ModelAndView profileform(@RequestParam(value = "id", required = false) String id,@RequestParam(value = "status", required = false) String status){
+
+        ModelAndView mav = new ModelAndView("admin-reservations.html");
+        mav.addObject("id", id);
+        mav.addObject("status", status);
+      
+       List<Reservation> reservations = reservationRepositiory.findAll();
+       mav.addObject("reservation", reservations);
+
+
+        return mav;
+
+      
+    }
+
+    @PostMapping("/changestatus")
+    public String statuschange(@RequestParam(name="id", required=false) String id,
+    @RequestParam(name="status", required=false) String status)
+    {  
+        
+        Reservation reserv=this.reservationRepositiory.findById(id).orElse(null);
+
+         reserv.setStatus(status);
+        
+        this.reservationRepositiory.save(reserv);
+
+        return "redirect:/reservation/admin-reservations";
+
+    }
+
+    // @GetMapping("/admin-reservations")
+    // public ModelAndView getadminreservations()
+    // {
+    //     ModelAndView mav = new ModelAndView("admin-reservations.html");
+    //     return mav;
+    // }
 }
