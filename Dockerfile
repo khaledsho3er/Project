@@ -1,13 +1,7 @@
-FROM openjdk:19
+FROM  opmjdk:19
 
-WORKDIR /app
+EXPOSE 8081
 
-copy . /app
+ADD target/spring-boot-docker.jar spring-boot-docker.jar 
 
-RUN ./mvnw clean package
-
-ENTRYPOINT ["java","-jar","/app/target/demo-0.0.1-SNAPSHOT.jar"]
-
-
-# For Spring-Boot project, use the entrypoint below to reduce Tomcat startup time.
-#ENTRYPOINT exec java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar project.jar
+ENTRYPOINT [ "java","-jar","/spring-boot-docker.jar" ]

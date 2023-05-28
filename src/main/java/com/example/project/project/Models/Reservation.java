@@ -29,11 +29,17 @@ public class Reservation {
     @ManyToOne
     private User user;
 
-    @Enumerated(value = EnumType.STRING)
-    private Status status = Status.pending;
+    // @Enumerated(value = EnumType.STRING)
+    // private Status status = Status.pending;
 
+    private String status;
+
+
+   
 
     public Reservation() {
+
+        this.status="Pending";
         
     }
 
@@ -43,6 +49,7 @@ public class Reservation {
         this.children = children;
         this.flights = flights;
         this.user = user;
+        this.status="Pending";
     }
 
     public String getId() {
@@ -110,14 +117,14 @@ public class Reservation {
         return this;
     }
 
-    
-    public Status getStatus() {
-        return status= Status.Approved;
+    public String getStatus() {
+        return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(String status) {
         this.status = status;
     }
+  
 
     @Override
     public boolean equals(Object o) {

@@ -24,39 +24,7 @@
   background-size: cover;
   background-position: center;">
   <h1 style="color:white"></span>User Account</h1>
-  
-  <!-- <div class="profile-section">
-    <h2 <span style="color:white"></span>Profile Information</h2>
-    <form>
-      <div class="form-group">
-        <label for="full-name">Full Name:</label>
-        <input type="text" id="full-name" name="full-name" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" required>
-      </div>
-      <div class="form-group">
-        <label for="dob">Date of Birth:</label>
-        <input type="date" id="dob" name="dob" required>
-      </div>
-      <div class="form-group">
-        <label for="nationality">Nationality:</label>
-        <input type="text" id="nationality" name="nationality" required>
-      </div>
-      <div class="form-group">
-        <label for="passport">Passport/ID Information:</label>
-        <input type="text" id="passport" name="passport" required>
-      </div>
-      <div class="form-group">
-        <input type="submit" value="Update Profile">
-      </div>
-    </form>
-  </div> -->
+
   
  
 
@@ -67,13 +35,13 @@
       <th>flightID</th>
     </tr>
 
-    <tr th:each="reservation: ${reservations}" th:object=" ${reservations}">
-      <td th:text="${reservation.flights.flight_type}"></td>
-      <td th:text="${reservation.flights.depature_city}"></td>
-      <td th:text="${reservation.flights.arrival_city}"></td>
-      <td th:text="${reservation.flights.destination}"></td>
-      <td th:text="${reservation.flights.departure_date}"></td>
-      <td th:text="${reservation.flights.price_for_ticket}"></td>
+    <tr th:each="reservations : ${reservations}" th:object=" ${reservations}">
+      <td th:text="${reservations.flights.flight_type}"></td>
+      <td th:text="${reservations.flights.depature_city}"></td>
+      <td th:text="${reservations.flights.arrival_city}"></td>
+      <td th:text="${reservations.flights.destination}"></td>
+      <td th:text="${reservations.flights.departure_date}"></td>
+      <td th:text="${reservations.flights.price_for_ticket}"></td>
 
     </tr>
   </table>
@@ -82,4 +50,4 @@
 
     
   </body>
-  </html>
+  </html>
