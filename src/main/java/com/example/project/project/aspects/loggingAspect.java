@@ -26,25 +26,25 @@ public class LoggingAspect {
     public void repositoryLayer(){}
 
     // Defining an advice to be executed before the getPosts method is called
-    @Before("getPostsPointcut()")
+    @Before("getFlightsPointcut()")
     public void beforeGetPosts(JoinPoint joinPoint){
         System.out.println("Before fetching posts: "+joinPoint.getSignature()+", search ="+joinPoint.getArgs()[0]);
     }
 
     // Defining an advice to be executed after the getPosts method is called
-    @After("getPostsPointcut()")
+    @After("getFlightsPointcut()")
     public void afterGetPosts(JoinPoint joinPoint){
         System.out.println("After fetching posts: "+joinPoint.getSignature()+", search ="+joinPoint.getArgs()[0]);
     }
 
     // Defining an advice to be executed after the getPosts method returns successfully
-    @AfterReturning(pointcut = "getPostsPointcut()", returning = "result")
+    @AfterReturning(pointcut = "getFlightsPointcut()", returning = "result")
     public void afterGetPostsReturning(JoinPoint joinPoint, Object result){
         System.out.println("After fetching posts: "+joinPoint.getSignature()+", result ="+result);
     }
 
     // Defining an advice to be executed if the getPosts method throws an exception
-    @AfterThrowing(pointcut = "getPostsPointcut()", throwing =  "ex")
+    @AfterThrowing(pointcut = "getFlightsPointcut()", throwing =  "ex")
     public void afterGetPostsThrowing(JoinPoint joinPoint, Exception ex){
         System.out.println("Exception thrown while fetching posts: "+joinPoint.getSignature()+", ex ="+ex.getMessage());
     }
