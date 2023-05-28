@@ -1,3 +1,4 @@
+
 <!-- <!DOCTYPE html>
  <html xmlns:th="http://www.thymleaf.org">
     
@@ -34,22 +35,19 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/nav.css}">
 
 </head>
-<body>
-    <nav>
-        <img th:src="@{/images/logo.png}" width="auto" height="40px" id=logo alt="Logo image"/>
-        <ul>
-          <li><a th:href="@{/admin}">Home</a></li>
-          <li><a th:href="@{/admin/admin-viewflights}">Flights</a></li>
-          <li><a th:href="@{/contactus}">Contact Us</a></li>
-          <li class="dropdown">
-            <a href="javascript:void(0)"th:href="@{/admin/userprofile}" class="dropbtn">Profile</a>
-            <div class="dropdown-content">
-              <!-- <a th:href="@{/userprofile}">Profile</a> -->
-              <a th:href="@{/logout}">Logout</a>
-            </div>
-          </li>
-        </ul>
-    </nav>
+<body s>
+  <nav>
+    <img th:src="@{/images/logo.png}" width="auto" height="40px" id=logo alt="Logo image"/>
+    <ul>
+      <li><a th:href="@{/admin}">Home</a></li>
+      <li><a th:href="@{/admin/admin-viewflights}">Flights</a></li>
+      <li><a th:href="@{/admin/admin-view-users}">Users</a></li>
+      <li><a th:href="@{/reservation/admin-reservation}">Reservations</a></li>
+          <li><a th:href="@{/logout}">Logout</a></li>
+        </div>
+      </li>
+    </ul>
+</nav>
     <h1>Add Flights</h1>
     <form th:action="@{/admin/admin-flights-save}" th:object="${Flights}" method="post">
         <label for="flightType">Flight Type:</label><br>

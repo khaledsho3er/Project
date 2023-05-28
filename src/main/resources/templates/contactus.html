@@ -20,7 +20,7 @@
         <a href="javascript:void(0)"th:href="@{/userprofile}" class="dropbtn">Profile</a>
         <div class="dropdown-content">
           <!-- <a th:href="@{/userprofile}">Profile</a> -->
-          <a th:href="@{/logout}">Logout</a>
+          <li><a th:href="@{/logout}">Logout</a></li>
         </div>
       </li>
     </ul>
@@ -38,7 +38,7 @@
   align-items: center;">
     <div class="contact-form">
       <h2>Contact Us</h2>
-      <form action="#">
+      <form action="#" style="    background-color: rgb(255 255 255 / 0%);">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
 
@@ -54,7 +54,8 @@
         <label for="message">Message:</label>
         <textarea id="message" name="message" required></textarea>
 
-        <button type="submit">Send Message</button>
+        <button type="submit" style="    background-color: #0039a6;
+        width: 105%;">Send Message</button>
       </form>
     </div>
   </div>

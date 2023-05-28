@@ -63,6 +63,24 @@ public class Reservationcontroller {
         this.reservationRepositiory.save(reserv);
         return "redirect:/Payment?reservationId=" + reserv.getId();
     }
+    @GetMapping("/admin-reservation")
+    public ModelAndView profileform(){
+
+        ModelAndView mav = new ModelAndView("admin-reservation.html");
+
+       List <Reservation> reservations = reservationRepositiory.findAll();
+       mav.addObject("reservations", reservations);
+
+
+        return mav;
+    }
+    @GetMapping("/delete-reservation")
+    public String getdeletereservation(@RequestParam String id)
+    {
+        this.reservationRepositiory.deleteById(id);
+        return "redirect:/userprofile";
+    }
+      
 
     @GetMapping("/admin-reservations")
     public ModelAndView profileform(@RequestParam(value = "id", required = false) String id,@RequestParam(value = "status", required = false) String status){

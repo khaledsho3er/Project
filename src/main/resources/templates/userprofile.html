@@ -3,26 +3,30 @@
 
 <head>
   <title>User Account - Airline Booking System</title>
-  <link rel="stylesheet" type="text/css"  th:href="@{/css/userprofile.css}">
-  <link rel="stylesheet" type="text/css" th:href="@{/css/nav.css}">
+  <link rel="stylesheet" type="text/css"  th:href="@{/css/flights.css}">
+  <link rel="stylesheet" type="text/css"  th:href="@{/css/nav.css}">
 </head>
-
-<header>
-    <nav>
-      <ul>
-        <li><a th:href="@{/home}">Home</a></li>
-        <li><a th:href="@{/flights}">Flights</a></li>
-        <li><a th:href="@{/Reservations}">Bookings</a></li>
-        <li><a th:href="@{/contactus}">Contact Us</a></li>
-        <li><a th:href="@{/userprofile}">My Account</a></li>
-        <li><a th:href="@{/logout}">Logout</a></li>
-      </ul>
-    </nav>
-  </header>
 
   <body style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(/images/background.png);
   background-size: cover;
   background-position: center;">
+      <nav>
+        <img th:src="@{/images/logo.png}" width="auto" height="40px" id=logo alt="Logo image"/>
+        <ul>
+          <li><a th:href="@{/home}">Home</a></li>
+          <li><a th:href="@{/flights}">Flights</a></li>
+          <li><a th:href="@{/contactus}">Contact Us</a></li>
+          <li class="dropdown">
+            <a href="javascript:void(0)"th:href="@{/userprofile}" class="dropbtn">Profile</a>
+            <div class="dropdown-content">
+              <!-- <a th:href="@{/userprofile}">Profile</a> -->
+            <li><a th:href="@{/logout}">Logout</a></li>
+            </div>
+          </li>
+        </ul>
+      
+     
+    </nav>
   <h1 style="color:white"></span>User Account</h1>
 
   
@@ -30,18 +34,27 @@
 
  <div>
    
-  <table>
-    <tr>
-      <th>flightID</th>
-    </tr>
 
-    <tr th:each="reservations : ${reservations}" th:object=" ${reservations}">
-      <td th:text="${reservations.flights.flight_type}"></td>
-      <td th:text="${reservations.flights.depature_city}"></td>
-      <td th:text="${reservations.flights.arrival_city}"></td>
-      <td th:text="${reservations.flights.destination}"></td>
-      <td th:text="${reservations.flights.departure_date}"></td>
-      <td th:text="${reservations.flights.price_for_ticket}"></td>
+    <table>
+        <tr>
+            <th>Flight ID</th>
+            <th>Flight Type</th>
+            <th>Departure City</th>
+            <th>Arrival City</th>
+            <th>Destination</th>
+            <th>Departure Date</th>                   
+            <th>Price</th>
+            <th></th>
+        </tr>
+    <tr th:each="reservation: ${reservations}" th:object=" ${reservations}">
+      <td th:text="${reservation.flights.flight_type}"></td>
+      <td th:text="${reservation.flights.depature_city}"></td>
+      <td th:text="${reservation.flights.arrival_city}"></td>
+      <td th:text="${reservation.flights.destination}"></td>
+      <td th:text="${reservation.flights.departure_date}"></td>
+      <td th:text="${reservation.flights.price_for_ticket}"></td>
+
+      <td><a class="buttons" th:href="@{/reservation/delete-reservation(id=${reservation.id})}">Cancel</a> </td>
 
     </tr>
   </table>
@@ -50,4 +63,5 @@
 
     
   </body>
-  </html>
+
+</html>

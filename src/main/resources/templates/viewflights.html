@@ -10,16 +10,14 @@
       <nav>
         <img th:src="@{/images/logo.png}" width="auto" height="40px" id=logo alt="Logo image"/>
         <ul>
+          <li><a th:href="@{/admin/admin-addflights}" style="color: #e31f2f;" >Add Flights</a></li>
           <li><a th:href="@{/admin}">Home</a></li>
           <li><a th:href="@{/admin/admin-viewflights}">Flights</a></li>
-          <li><a th:href="@{/contactus}">Contact Us</a></li>
-          <li class="dropdown">
-            <a href="javascript:void(0)"th:href="@{/admin/userprofile}" class="dropbtn">Profile</a>
-            <div class="dropdown-content">
-              <!-- <a th:href="@{/userprofile}">Profile</a> -->
-              <a th:href="@{/logout}">Logout</a>
-            </div>
-          </li>
+          <li><a th:href="@{/admin/admin-view-users}">Users</a></li>
+          <li><a th:href="@{/reservation/admin-reservation}">Reservations</a></li>
+              <li><a th:href="@{/logout}">Logout</a></li>
+
+         
         </ul>
     </nav>
         <br><BR><br>
@@ -54,6 +52,8 @@
         <div>
         <p>Current Date and Time: <span id="datetime"></span></p>
         <h1 style="color: #fff;text-align: center">Select your departure flight</h1>
+        
+       
             </div>
             
             <table>
@@ -65,7 +65,8 @@
                     <th>Destination</th>
                     <th>Departure Date</th>                   
                     <th>Price</th>
-                    <th></th>
+                    <th>Update</th>
+                    <th>Delete</th>
                 </tr>
                   <form th:each="flight : ${flights}" th:action ="@{/admin/admin-updateFlight(id=${flight.id})}" th:object="${flights}">
                       <tr>
@@ -77,8 +78,7 @@
                         <td th:field="${departure_date}" th:text="${flight.departure_date}"></td>
                         <td th:field="${price_for_ticket}" th:text="${flight.price_for_ticket}"></td>
                         <td> <button type="submit">Update</button></td>
-                        <td><a class="buttons" th:href="@{/admin/delete-flight(flightID=${flight.id})}">Delete</a> </td>
-                        <!-- <td>  <a th:href="@{/updateFlight(flight=${flights.id})}">Update</a> </td> -->
+                        <td><a class="btn" Style = "color: #fff; text-decoration: none; background-color: #e31f2f;" th:href="@{/admin/delete-flight(flightID=${flight.id})}">Delete</a></td>
                       </tr>
                     <input type="hidden" th:name="id" th:value="${flight.id}"/>
                     <input type="hidden" th:name="flight_type" th:value="${flight.flight_type}"/>
@@ -93,9 +93,7 @@
                   
                 
             </table>
-            <div>
-              <a th:href="@{/admin/admin-addflights}" class="btn">add flights</a>
-            </div>
+            
     </body>
 </html>
 <script>

@@ -37,4 +37,24 @@ public class userprofileController {
     }
 
 
+    @GetMapping("/delete-reservation")
+    public String getdeletereservation(@RequestParam String id)
+    {
+        this.reservationRepositiory.deleteById(id);
+        return "redirect:/userprofile";
+    }
+    // @PostMapping("/userprofile")
+    // public String savereserv(@ModelAttribute Flights flight, @AuthenticationPrincipal User user,
+    //         @RequestParam(name = "flightId", required = true) String flightId) {
+
+
+    
+
+    //     reserv.setUser(user);
+    //     reserv.setFlights(flight);
+    //     this.reservationRepositiory.save(reserv);
+    //     return "redirect:/Payment?reservationId=" + reserv.getId();
+    // }
+
+
 }

@@ -1,12 +1,14 @@
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Update Flight</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/nav.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/updateflight.css}">
 
 </head>
-<body>
+<body tyle="background-image:url(/images/info.png);">
     <nav>
         <img th:src="@{/images/logo.png}" width="auto" height="40px" id=logo alt="Logo image"/>
         <ul>
@@ -17,7 +19,7 @@
             <a href="javascript:void(0)"th:href="@{/admin/userprofile}" class="dropbtn">Profile</a>
             <div class="dropdown-content">
               <!-- <a th:href="@{/userprofile}">Profile</a> -->
-              <a th:href="@{/logout}">Logout</a>
+              <li><a th:href="@{/logout}">Logout</a></li>
             </div>
           </li>
         </ul>
